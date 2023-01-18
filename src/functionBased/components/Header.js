@@ -1,5 +1,6 @@
 import React from "react";
 
+// Header function
 const Header = () => {
   const headerStyle = {
     padding: "20px 0",
