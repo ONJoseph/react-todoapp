@@ -20,12 +20,14 @@ const Navbar = () => {
   const handleToggle = () => {
     setNavbarOpen((prev) => !prev);
   };
+
   const closeMenu = () => {
     setNavbarOpen(false);
   };
+
   return (
     <nav className="navBar">
-      <button onClick={handleToggle}>
+      <button type="button" onClick={handleToggle}>
         {navbarOpen ? (
           <MdClose style={{ color: '#fff', width: '40px', height: '40px' }} />
         ) : (
@@ -37,9 +39,8 @@ const Navbar = () => {
           <li key={link.id}>
             <NavLink
               to={link.path}
-              activeClassName="active-link"
+              className={(navData) => (navData.isActive ? 'active-style' : 'none')}
               onClick={() => closeMenu()}
-              exact
             >
               {link.text}
             </NavLink>

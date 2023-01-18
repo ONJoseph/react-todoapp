@@ -1,31 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import TodoItem from './TodoItem';
 
-class TodosList extends React.Component {
+class TodosList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+
   render() {
-    const completedStyle = {
-      fontStyle: 'italic',
-      color: '#595959',
-      opacity: 0.4,
-      textDecoration: 'line-through',
-    };
+    const {
+      todos, handleChangeProps, deleteTodoProps, setUpdate,
+    } = this.props;
     return (
-      <li className={styles.item}>
-        <input
-          type="checkbox"
-          className={styles.checkbox}
-          checked={this.props.todo.completed}
-          onChange={() => this.props.handleChangeProps(this.props.todo.id)}
-        />
-        <button onClick={() => this.props.deleteTodoProps(this.props.todo.id)}>
-          Delete
-        </button>
-        <span style={this.props.todo.completed ? completedStyle : null}>
-          {this.props.todo.title}
-        </span>
-      </li>
+      <ul>
+        {todos.map((todo) => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            handleChangeProps={handleChangeProps}
+            deleteTodoProps={deleteTodoProps}
+            setUpdate={setUpdate}
+          />
+        ))}
+      </ul>
     );
   }
 }
+
+TodosList.propTypes = {
+  todos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      title: PropTypes.string,
+      completed: PropTypes.bool,
+    }),
+  ).isRequired,
+  handleChangeProps: PropTypes.func.isRequired,
+  deleteTodoProps: PropTypes.func.isRequired,
+  setUpdate: PropTypes.func.isRequired,
+};
 
 export default TodosList;
