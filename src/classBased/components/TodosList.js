@@ -1,14 +1,14 @@
-import React from "react"
-import TodoItem from "./TodoItem";
+import React from 'react';
+import TodoItem from './TodoItem';
 
 class TodosList extends React.Component {
   render() {
     const completedStyle = {
-      fontStyle: "italic",
-      color: "#595959",
+      fontStyle: 'italic',
+      color: '#595959',
       opacity: 0.4,
-      textDecoration: "line-through",
-    }
+      textDecoration: 'line-through',
+    };
     return (
       <li className={styles.item}>
         <input
@@ -24,8 +24,8 @@ class TodosList extends React.Component {
           {this.props.todo.title}
         </span>
       </li>
-    )
+    );
   }
 }
 
-export default TodosList
+export default TodosList;

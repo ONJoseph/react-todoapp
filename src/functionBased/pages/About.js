@@ -1,10 +1,10 @@
-import React from "react";
-import SinglePage from "./SinglePage"
-import { Link, useMatch, Route } from "react-router-dom";
+import React from 'react';
+import { Link, useMatch, Route } from 'react-router-dom';
+import SinglePage from './SinglePage';
 
 const About = (props) => {
-  console.log(useMatch(props))
-  const { url, path } = useMatch()
+  console.log(useMatch(props));
+  const { url, path } = useMatch();
   return (
     <div className="about__content">
       <ul className="about__list">

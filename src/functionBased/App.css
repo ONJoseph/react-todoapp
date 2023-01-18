@@ -121,12 +121,6 @@ a {
   margin-top: 7rem;
 }
 
-.navBar button {
-  /* addition */ 
-  background: transparent;
-  border: none;
-}
-
 /* about page */
 
 .about__content {
@@ -164,9 +158,3 @@ a {
 .main__content p {
   line-height: 25px;
 }
-
-
-
-
-
-
