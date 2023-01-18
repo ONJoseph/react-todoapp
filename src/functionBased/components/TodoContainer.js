@@ -1,4 +1,4 @@
-// Imports
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { v4 as uuids4 } from 'uuid';
 import TodosList from './TodosList';
